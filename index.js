@@ -21,6 +21,7 @@ const parse = async () => {
   };
 
   const $ = await getHTML(
+    // 'https://www.zoe.com.ua/%d0%b0%d0%b2%d0%b0%d1%80%d1%96%d0%b9%d0%bd%d1%96-%d0%b2%d1%96%d0%b4%d0%ba%d0%bb%d1%8e%d1%87%d0%b5%d0%bd%d0%bd%d1%8f/'
     "https://www.zoe.com.ua/%d0%ba%d0%be%d1%80%d0%b8%d1%81%d0%bd%d1%96-%d0%bf%d0%be%d1%80%d0%b0%d0%b4%d0%b8/"
   );
   /*select quest_block where header contains our target city*/
@@ -75,7 +76,7 @@ const parse = async () => {
     return result
   };
 
-  const parsedInfo = getDates(targetCity).reduce((obj, key) => ({...obj, [key]: getDataByDate(key)}))
+  const parsedInfo = getDates(targetCity).reduce((obj, key) => ({...obj, [key]: getDataByDate(key)}), {})
   console.log(parsedInfo);
 
 
